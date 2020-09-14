@@ -1,5 +1,5 @@
 import XCTest
-import CryptoKit
+import Bcrypt
 
 public class BCryptTests: XCTestCase {
     public func testVersion() throws {

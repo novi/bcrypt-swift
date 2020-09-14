@@ -1,5 +1,5 @@
 import XCTest
-import CryptoKit
+import Bcrypt
 
 public class RandomTests: XCTestCase {
     public func testURandom() throws {
