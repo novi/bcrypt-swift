@@ -47,15 +47,15 @@ public enum CryptoData {
         }
     }
     
-    public func base32EncodedString() -> String {
-        switch self {
-        case .data(let data): return data.base32EncodedString()
-        case .string(let string): return Data(string.utf8).base32EncodedString()
-        case .bytes(let bytes): return Data(bytes).base32EncodedString()
-        case .bytesSlice(let bytes): return Data(bytes).base32EncodedString()
-        case .staticString(let string): return Data(string.description.utf8).base32EncodedString()
-        }
-    }
+    // public func base32EncodedString() -> String {
+    //     switch self {
+    //     case .data(let data): return data.base32EncodedString()
+    //     case .string(let string): return Data(string.utf8).base32EncodedString()
+    //     case .bytes(let bytes): return Data(bytes).base32EncodedString()
+    //     case .bytesSlice(let bytes): return Data(bytes).base32EncodedString()
+    //     case .staticString(let string): return Data(string.description.utf8).base32EncodedString()
+    //     }
+    // }
 }
 
 extension CryptoData: CustomStringConvertible {
