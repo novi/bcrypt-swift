@@ -1,27 +1,27 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.1
 import PackageDescription
 
 let package = Package(
-    name: "crypto-kit",
+    name: "bcrypt-swift",
     products: [
         .library(name: "CryptoKit", targets: ["CryptoKit"]),
     ],
     dependencies: [],
     targets: [
-        .target(name: "CBase32"),
+        // .target(name: "CBase32"),
         .target(name: "CBcrypt"),
-        .systemLibrary(
-            name: "CCryptoOpenSSL",
-            pkgConfig: "openssl",
-            providers: [
-                .apt(["openssl libssl-dev"]),
-                .brew(["openssl@1.1"])
-            ]
-        ),
+        // .systemLibrary(
+        //     name: "CCryptoOpenSSL",
+        //     pkgConfig: "openssl",
+        //     providers: [
+        //         .apt(["openssl libssl-dev"]),
+        //         .brew(["openssl@1.1"])
+        //     ]
+        // ),
         .target(name: "CryptoKit", dependencies: [
-            "CBase32",
+            // "CBase32",
             "CBcrypt",
-            "CCryptoOpenSSL"
+            // "CCryptoOpenSSL"
         ]),
         .testTarget(name: "CryptoKitTests", dependencies: ["CryptoKit"]),
     ]

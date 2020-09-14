@@ -7,12 +7,12 @@ public class RandomTests: XCTestCase {
         print(rand)
     }
 
-    public func testOSRandom() throws {
-        let rand = try OSRandom().generate(Int64.self)
-        print(rand)
-        let bytes = OSRandom().generateData(count: 32)
-        print(String(bytes: bytes, encoding: .utf8) ?? "n/a")
-    }
+    // public func testOSRandom() throws {
+    //     let rand = try OSRandom().generate(Int64.self)
+    //     print(rand)
+    //     let bytes = OSRandom().generateData(count: 32)
+    //     print(String(bytes: bytes, encoding: .utf8) ?? "n/a")
+    // }
 
     public func testURandomCount() throws {
         let rand = try URandom().generateData(count: 65_536)
@@ -26,16 +26,16 @@ public class RandomTests: XCTestCase {
         XCTAssertNotEqual(tail, zeros)
     }
     
-    public func testSwiftRandom() {
-        let random = [UInt8].random(count: 1024)
-        XCTAssertEqual(random.count, 1024)
-    }
+    // public func testSwiftRandom() {
+    //     let random = [UInt8].random(count: 1024)
+    //     XCTAssertEqual(random.count, 1024)
+    // }
     
     public static var allTests = [
         ("testURandom", testURandom),
-        ("testOSRandom", testOSRandom),
+        // ("testOSRandom", testOSRandom),
         ("testURandomCount", testURandomCount),
         ("testForTrailingZeros", testForTrailingZeros),
-        ("testSwiftRandom", testSwiftRandom),
+        // ("testSwiftRandom", testSwiftRandom),
     ]
 }
